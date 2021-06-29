@@ -1,13 +1,13 @@
 toolchain("win") {
   tool("cxx") {
-    pdbname = "{{target_out_dir}}/{{label_name}}_cc.pdb"
-    command = "clang++ /c {{source}} -o {{output}}"
+    # pdbname = "{{target_out_dir}}/{{label_name}}_cc.pdb"
+    command = "cl /Fo{{output}} {{source}}"
     outputs = [ "{{source_out_dir}}/{{target_output_name}}.obj" ]
   }
 
   tool("link") {
     exe_name = "{{root_out_dir}}/{{target_output_name}}{{output_extension}}"
-    command = "clang++ {{inputs}} -o $exe_name"
+    command = "link {{inputs}}"
     outputs = ["$exe_name"]
   }
 }
