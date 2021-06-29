@@ -1,0 +1,3 @@
+# gn help dotfile
+
+buildconfig = "//build/config/CONFIG.gn"
